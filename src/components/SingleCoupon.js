@@ -133,13 +133,13 @@ class SingleCoupon extends Component {
                       </p>
                     </Col>
                 </Row>
-                <Row>
+                <Row >
                   <h4 className="det">Details</h4>
                   <p className="detC">{this.state.couponDetails.details}</p>
                 </Row>
-                <Row>
+                <Row >
                   <h4 className="loc">Location</h4>
-                  <div>
+                  <div style={{width:'100%',height: '50%'}} >
                     <Mapa coordinates={this.state.couponDetails.coordinates}/>
                   </div>
                 </Row>
@@ -151,7 +151,7 @@ class SingleCoupon extends Component {
                 >
                 <a className="exit" sm={{ size: 1, offset: 10 }} onClick={this.closeModal}>x</a>
                 <h2>Reserve this coupon</h2>
-                <div> 
+                <div>
                 <Button onClick={this.closeModal}>x</Button>
                 <h2>Book this coupon!</h2>
                 <h3>{this.state.couponDetails.title}</h3>

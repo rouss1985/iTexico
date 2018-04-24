@@ -14,26 +14,25 @@ export class MapContainer extends React.Component {
             return (
                 <div style={{width:'100%',height: 300}}>
                     <Map google={this.props.google}
-    
+
                     style={style}
                     initialCenter={{
-    
+
                         lat: lat,
                         lng: lng
-    
+
                     }}
-    
+
                 zoom={10}>
-    
-    
+
                     </Map>
                 </div>)
         } else {
             return <p>Cargando</p>
         }
-    
-        
-        
+
+
+
     }
 
 }
