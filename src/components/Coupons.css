@@ -1,0 +1,44 @@
+.cuponCard{
+  height: 450px;
+  width: 277px;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+}
+
+.titleCuponn{
+  height: 19px;
+  width: 235px;
+  color: #000000;
+  font-family: Lato;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.nameCoun{
+  font-family: Lato;
+  font-size: 16px;
+  line-height: 19px;
+  color:#7F7F7F;
+}
+
+.cuponDetails{
+  font-family: Lato;
+  font-size: 16px;
+  line-height: 14px;
+  font-size: 17px;
+  color:#7F7F7F;
+}
+
+.local{
+  font-family: Lato;
+  font-size: 16px;
+  line-height: 19px;
+  color:#7F7F7F;
+}
+
+.disp{
+  font-family: Lato;
+  font-size: 16px;
+  line-height: 19px;
+}
