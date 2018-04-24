@@ -1,52 +1,69 @@
 .most-recent {
-  padding: 30px;
-  display: inline-block;
-  margin-left: 0px;
-  padding-left: 0px;
+  font-family: Lato;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 39px;
   text-align: left;
-
 }
 
-.sel{
-
+.Title {
+  padding-top: 64px;
+  padding-bottom:  30px;
 }
 
-.card{
-
+.card-image {
+  height: 160px;
 }
 
-.imgCard{
-
+.card-title {
+  font-family: Lato;
+  font-size: 16px;
+  line-height: 19px;
+  color: black;
 }
 
-.cardB{
-
+.card-details {
+  color: #7F7F7F;
+  font-family: Lato;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  text-align: left;
 }
 
-.titleCard{
-
+.card-location {
+  color: #7F7F7F;
+  font-family: Lato;
+  font-size: 14px;
+  line-height: 17px;
+  border-bottom-style: dotted;
+  border-bottom-width: 1px;
 }
 
-.acountCard{
-
+.card-price {
+  text-decoration:line-through;
+  color: #CACACA;
+  font-family: Lato;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: right;
 }
 
-.Details{
-
+.card-discount{
+  	color: #2BD6BA;
+    font-family: Lato;
+    font-size: 24px;
+    line-height: 29px;
+    padding-left: 20px;
 }
 
-.loc{
-
+.card-cost{
+  padding-left: 50%;
 }
 
-.priceCupon{
-
+.paginacion {
+  padding-top:40px;
 }
-
-.descCupon{
-
-}
-
-.cuponTotal{
-  
+.card {
+  margin-bottom: 20px;
 }
