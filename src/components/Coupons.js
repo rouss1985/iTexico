@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { Container, Row, Col,Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { Link } from "react-router-dom";
+
 
 
 class Coupons extends Component {
     render() {
+        console.log(this.props.coupons)
         return (
             <Container>
                 <Row>
@@ -17,21 +20,23 @@ class Coupons extends Component {
                     </select>
                 </Row>
                 <Row>
-                {this.props.coupons.map((el)=>{
+                {this.props.coupons.map((el, index)=>{
                     return(
-                        <Col xs="6" sm="4">
+                        <Col xs="6" sm="4" key={index}>
                             <Card>
-                                <CardImg src={el.media_urls[0]} alt={el.title} />
-                                <CardBody>
-                                    <CardTitle>{el.title}</CardTitle>
-                                    <CardSubtitle>{el.account.name}</CardSubtitle>
-                                    <CardText>{el.details.slice(0,20)}</CardText>
-                                    <CardText>{el.location}</CardText>
-                                    <CardText>Precio: {el.price}</CardText>
-                                    <CardText>Descuento: {el.discount_price}</CardText>
-                                    <CardText>{el.available_coupons}</CardText>
-                                    <Button>Button</Button>
-                                </CardBody>
+                            <Link to={"/cupon/" + el.id} >
+                                    <CardImg src={el.media_urls} alt={el.title} />
+                                    <CardBody>
+                                        <CardTitle>{el.title}</CardTitle>
+                                        {/* <CardSubtitle>{el.account.name}</CardSubtitle> */}
+                                        <CardText>{el.details}</CardText>
+                                        <CardText>{el.location}</CardText>
+                                        <CardText>Precio: {el.price}</CardText>
+                                        <CardText>Descuento: {el.discount_price}</CardText>
+                                        <CardText>{el.available_coupons}</CardText>
+                                        <Button>Button</Button>
+                                    </CardBody>
+                                </Link>
                             </Card>
                         </Col>
                     )

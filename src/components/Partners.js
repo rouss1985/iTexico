@@ -1,27 +1,31 @@
 import React, { Component } from 'react';
 import { Container, Row, Col,Card, CardImg, CardText, CardBody,
         CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { Link } from "react-router-dom";
 import './Partners.css'
 
 
 
 class Partners extends Component {
     render() {
-        console.log('props',this.props)
+        
         return (
             <Container className="contain">
                 <h1 className="title2">Our partners</h1>
                 <Row>
                 {this.props.partners.map((el, index)=>{
                 if(index < 3){
+                    
                     return(
-                        <Col xs="12" sm="3">
+                        <Col xs="12" sm="3" key={index}>
                             <Card className="card2">
-                                <CardImg className="imgCard2" src={el.media_urls[0]} alt={el.name} />
-                                <CardBody className="bodyCard2">
-                                <CardTitle className="nameCard2">{el.name}</CardTitle>
-                                <CardSubtitle className="sudCard2">{el.category}</CardSubtitle>
-                                </CardBody>
+                                <Link to={"/partner/" + el.id} >
+                                    <CardImg className="imgCard2" src={el.media_urls[0]} alt={el.name} />
+                                        <CardBody className="bodyCard2">
+                                        <CardTitle className="nameCard2">{el.name}</CardTitle>
+                                        <CardSubtitle className="sudCard2">{el.category}</CardSubtitle>
+                                    </CardBody>
+                                </Link>
                             </Card>
                         </Col>
                     )

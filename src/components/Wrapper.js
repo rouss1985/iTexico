@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 import Coupons from './Coupons'
 import Partners from './Partners'
+import { BrowserRouter } from "react-router-dom";
+import Filter from './Filter'
+import Hero from './Hero'
+
 
 
 class Wrapper extends Component {
     constructor(){
         super()
         this.state = {
+            originalCoupons: [],
             coupons: [],
-            partners: []
+            partners: [],
+            
         }
         this.sortCoupon = this.sortCoupon.bind(this)
+        this.filter = this.filter.bind(this)
     }
 
     sortCoupon(event){
@@ -37,7 +44,20 @@ class Wrapper extends Component {
             }
         }
 
-    
+    filter(category){
+        let filterCoupons = []
+        if(category === 'all'){
+            this.setState({coupons: this.state.originalCoupons})
+        }
+        else {
+            this.state.originalCoupons.forEach((element)=>{
+                if(element.account.category === category){
+                    filterCoupons.push(element)
+                }
+            })
+            this.setState({coupons: filterCoupons})
+        }
+    }
 
     fetchCoupons(){
         fetch('https://freetime-laboratoria.herokuapp.com/api/Coupons/allByCategory')
@@ -45,7 +65,8 @@ class Wrapper extends Component {
         return response.json()
         })
         .then((response) => {
-            this.setState({coupons: response.coupons}, ()=>{console.log(this.state.coupons,'response')})
+            this.setState({coupons: response.coupons})
+            this.setState({originalCoupons: response.coupons})
         })
     }   
 
@@ -72,6 +93,8 @@ class Wrapper extends Component {
     render() {
         return (
             <div>
+                <Hero/>
+                <Filter filter={this.filter}/>
                 <Coupons sortCoupon={this.sortCoupon} coupons={this.state.coupons}/>
                 <Partners partners={this.state.partners}/>
             </div>
