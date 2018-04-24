@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
-import Hero from'./components/Hero';
 import Footer from './components/Footer';
+import { Switch, Route } from "react-router-dom";
+import SingleCoupon from './components/SingleCoupon'
+import SinglePartner from './components/SinglePartner'
 import Wrapper from './components/Wrapper';
 import Maps from './components/Map';
 import { Container, Row, Col } from 'reactstrap';
@@ -14,11 +16,23 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Hero />
-
-        <Container>
-        <Wrapper />
-        </Container>
+        <Switch>
+          <Route path="/" exact component={Wrapper} />
+          <Route 
+          render={({match})=>
+            <SingleCoupon 
+              id={match.params.id}
+              />
+            } 
+            path="/cupon/:id" />
+          <Route 
+          render={({match})=>
+            <SinglePartner 
+              id={match.params.id}
+              />
+            } 
+            path="/partner/:id" />
+        </Switch>
         <Footer />
         <Maps />
 
