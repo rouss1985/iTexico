@@ -49,8 +49,8 @@ class Wrapper extends Component {
             this.setState({coupons: this.state.originalCoupons})
         }
         else {
-            this.state.originalCoupons.forEach((element)=>{
-                if(element.account.category === category){
+            this.state.originalCoupons.forEach((element, index)=>{
+                if(index !== 28 && element.account.category === category){
                     filterCoupons.push(element)
                 }
             })
