@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import Coupons from './Coupons'
-import Partners from './Partners'
+import Coupons from './Coupons';
+import Partners from './Partners';
 import { BrowserRouter } from "react-router-dom";
-import Filter from './Filter'
-import Hero from './Hero'
+import Filter from './Filter';
+import Hero from './Hero';
+// import Pagination from './Pagination';
 
 
 
@@ -14,7 +15,7 @@ class Wrapper extends Component {
             originalCoupons: [],
             coupons: [],
             partners: [],
-            
+
         }
         this.sortCoupon = this.sortCoupon.bind(this)
         this.filter = this.filter.bind(this)
@@ -56,6 +57,7 @@ class Wrapper extends Component {
                 }
             })
             this.setState({coupons: filterCoupons})
+
         }
     }
 
@@ -67,8 +69,8 @@ class Wrapper extends Component {
         .then((response) => {
             this.setState({coupons: response.coupons})
             this.setState({originalCoupons: response.coupons})
-        })
-    }   
+          })
+    }
 
     fetchPartners(){
         fetch('https://freetime-laboratoria.herokuapp.com/api/Accounts?access_token=YSfVKckQ68aaHfmMlfZplkNG5YbPaKTFsPFZ1kNtRkiZzfnBu8vPLFOCjRiYYTv1')
@@ -81,7 +83,7 @@ class Wrapper extends Component {
                 .sort((a, b) => a.sort - b.sort)
                 .map((a) => a.value)
             this.setState({partners: shuffled})
-    
+
         })
     }
 
@@ -96,6 +98,7 @@ class Wrapper extends Component {
                 <Hero/>
                 <Filter filter={this.filter}/>
                 <Coupons sortCoupon={this.sortCoupon} coupons={this.state.coupons}/>
+
                 <Partners partners={this.state.partners}/>
             </div>
         )
@@ -103,4 +106,3 @@ class Wrapper extends Component {
 }
 
 export default Wrapper;
-

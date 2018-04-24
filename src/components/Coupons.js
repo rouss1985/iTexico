@@ -7,7 +7,10 @@ import { Link } from "react-router-dom";
 
 class Coupons extends Component {
     render() {
-        console.log(this.props.coupons)
+        console.log(this.props.coupons);
+        // Guardando data en LS
+        localStorage.setItem("jsonCoups", JSON.stringify(this.props.coupons));
+
         return (
             <Container>
                 <Row>
