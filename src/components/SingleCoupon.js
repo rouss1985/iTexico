@@ -120,11 +120,10 @@ class SingleCoupon extends Component {
 
                     <Col sm="4" sm={{ size: 5, offset: 2 }}>
                       <p className="titleCo">{this.state.couponDetails.title}</p>
-                      <p className="cPrice">Precio: {this.state.couponDetails.price}</p>
-                      <p className="cDesc">Descuento: {this.state.couponDetails.discount_price}</p>
-                      <p className="cDisp">Cupones disponibles: {this.state.couponDetails.available_coupons}</p>
+                      <p className="cPrice">Price: {this.state.couponDetails.price}</p>
+                      <p className="cDesc">Discount: {this.state.couponDetails.discount_price}</p>
+                      <p className="cDisp">Coupons Available: {this.state.couponDetails.available_coupons}</p>
                       <Button disable='true' onClick={this.openModal} className="btnn">Reservation</Button>
-                      
                       <p className="parraf">
                         *We will send you Code you reserve your coupon.You
                         have 48 Hours to present your coupon in the location listed.
@@ -147,11 +146,13 @@ class SingleCoupon extends Component {
                     style={customStyles}
                     contentLabel="Example Modal"
                 >
+                 <button onClick={this.closeModal}>x</button>
+                <h2>Reserve this coupon</h2>
                 <div> 
                 <Button onClick={this.closeModal}>x</Button>
-                <h2>Reservar este cupón</h2>
+                <h2>Reserve this coupon</h2>
                 <h3>{this.state.couponDetails.title}</h3>
-                <p><span>Precio: ${this.state.couponDetails.price} </span><span>Descuento: ${this.state.couponDetails.discount_price}</span></p>
+                <p><span>Price: ${this.state.couponDetails.price} </span><span>Discount: ${this.state.couponDetails.discount_price}</span></p>
                 <Form>
                     <FormGroup>
                         <Label>Nombre</Label>
@@ -165,7 +166,7 @@ class SingleCoupon extends Component {
                         <Label>Teléfono</Label>
                         <Input />
                     </FormGroup>
-                    <Button onClick={(event)=>{this.setReservation(event)}}color="primary" disabled={this.state.disabled}>Reservar este cupón</Button>
+                    <Button onClick={(event)=>{this.setReservation(event)}}color="primary" disabled={this.state.disability}>Reserve this coupon</Button>
                 </Form>
 
                 </div>
