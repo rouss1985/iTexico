@@ -149,7 +149,6 @@ class SingleCoupon extends Component {
                     style={customStyles}
                     contentLabel="Example Modal"
                 >
-                <div>
                 <a className="exit" sm={{ size: 1, offset: 10 }} onClick={this.closeModal}>x</a>
                 <h2>Reserve this coupon</h2>
                 <div> 
