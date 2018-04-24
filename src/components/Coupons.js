@@ -33,7 +33,7 @@ class Coupons extends Component {
                                     <CardBody>
                                         <CardTitle>{el.title}</CardTitle>
                                         <CardSubtitle>{el.account.name}</CardSubtitle>
-                                        <CardText>{el.details}</CardText>
+                                        <CardText>{el.details.slice(0,20)}</CardText>
                                         <CardText>{el.location}</CardText>
                                         <CardText>Precio: {el.price}</CardText>
                                         <CardText>Descuento: {el.discount_price}</CardText>

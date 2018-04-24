@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'reactstrap';
 
 class SingleCoupon extends Component {
     constructor(){
@@ -39,8 +40,8 @@ class SingleCoupon extends Component {
                 <img src={this.state.couponDetails.media_urls}></img>
                 <p>{this.state.couponDetails.details}</p>
                 <p>Cupones disponibles: {this.state.couponDetails.available_coupons}</p>
+                <Button color="primary">Reservation</Button>
             </div>)
-            <Button color="primary">Reservation</Button>
     }
 
 
