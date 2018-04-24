@@ -9,8 +9,12 @@
 }
 
 .divfoo{
-  height: 350px;
+  height: 10vh;
   width: cover;
   background-color: #EEEEEE;
 
+}
+
+a:hover{
+  text-decoration:none;
 }

@@ -40,7 +40,7 @@ class Coupons extends Component {
                                         <CardText className="card-price">${el.price}</CardText>
                                         <CardText className="card-discount">$ {el.discount_price}</CardText>
                                         </Row>
-                                        <CardText>{el.available_coupons} cupones disponibles</CardText>
+                                        <CardText>{el.available_coupons} Coupons Availables</CardText>
                                     </CardBody>
                                 </Link>
                             </Card>

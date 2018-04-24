@@ -5,7 +5,7 @@ import { Card, CardImg, CardText, CardBody,
   const Hero = () => (
     <div>
         <Row>
-          <Col sm="12"><div className="image-hero"><h1 className="title">Grat Deals for Great experiences</h1></div></Col>
+          <Col sm="12"><div className="image-hero"><h1 className="title">Great Deals for Great experiences</h1></div></Col>
         </Row>
       </div>
 );
