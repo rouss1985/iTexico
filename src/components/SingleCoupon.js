@@ -37,12 +37,12 @@ class SingleCoupon extends Component {
     ableButton(){
         if(this.state.couponDetails.available_coupons === 0){
             this.setState({disability: true})
-                
+
             } else {
                 this.setState({disability: false})
             }
         }
-    
+
 
     openModal() {
         this.setState({modalIsOpen: true});
@@ -69,14 +69,14 @@ class SingleCoupon extends Component {
         .then(function(res){ console.log(res) })
         .catch(function(res){ console.log(res) })
     }
-    
+
     setReservation(event){
         let name = event.target.previousSibling.previousSibling.previousSibling.children[1].value;
         let email = event.target.previousSibling.previousSibling.children[1].value;
         let phone = event.target.previousSibling.children[1].value
         this.sendReservation(name, email, phone)
     }
-    
+
     closeModal() {
         this.setState({modalIsOpen: false});
     }
@@ -118,8 +118,8 @@ class SingleCoupon extends Component {
                       <p className="cPrice">Precio: {this.state.couponDetails.price}</p>
                       <p className="cDesc">Descuento: {this.state.couponDetails.discount_price}</p>
                       <p className="cDisp">Cupones disponibles: {this.state.couponDetails.available_coupons}</p>
-                      
-                      <Button onClick={this.openModal} color="primary">Reservation</Button>
+
+                      <Button onClick={this.openModal} className="btnn">Reservation</Button>
                       
                       <p className="parraf">
                         *We will send you Code you reserve your coupon.You
@@ -162,8 +162,8 @@ class SingleCoupon extends Component {
                     </FormGroup>
                     <Button onClick={(event)=>{this.setReservation(event)}}color="primary" disabled={this.state.disability}>Reservar este cupón</Button>
                 </Form>
-                        
-                    
+
+
                 </Modal>
                 </Container>
             </div>)
