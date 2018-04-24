@@ -30,16 +30,17 @@ class SingleCoupon extends Component {
     }
 
     render(){
-        
+
         return(<div>
             <p>{this.state.couponDetails.title}</p>
             {/* <p>{this.state.account.name}</p> */}
             <p>Precio: {this.state.couponDetails.price}</p>
             <p>Descuento: {this.state.couponDetails.discount_price}</p>
-                <img src={this.state.couponDetails.media_urls}></img> 
+                <img src={this.state.couponDetails.media_urls}></img>
                 <p>{this.state.couponDetails.details}</p>
                 <p>Cupones disponibles: {this.state.couponDetails.available_coupons}</p>
             </div>)
+            <Button color="primary">Reservation</Button>
     }
 
 
