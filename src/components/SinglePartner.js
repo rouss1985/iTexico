@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import { Container, Row, Col,Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { Row, Col,Card, CardImg, CardText, CardBody,
+    CardTitle } from 'reactstrap';
 import { Link } from "react-router-dom";
 import './SinglePartner.css';
 import Dropdown from './Dropdown';

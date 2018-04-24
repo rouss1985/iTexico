@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import Coupons from './Coupons'
 import Partners from './Partners'
-import { BrowserRouter } from "react-router-dom";
 import Filter from './Filter'
 import Hero from './Hero'
-import { Container, Row, Col } from 'reactstrap';
-let _ = require('lodash');
+import { Row, Col } from 'reactstrap';
 
 
 class Wrapper extends Component {
@@ -40,7 +38,7 @@ class Wrapper extends Component {
             this.setState({coupons : newCoupons})
             break;
             case 'ZToA':
-            console.log(_.sortBy(this.state.coupons, 'title'));
+            
             newCoupons = this.state.coupons.sort(function(obj1, obj2) {
             return obj2.title < obj1.title;
             });
