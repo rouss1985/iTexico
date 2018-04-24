@@ -149,11 +149,8 @@ class SingleCoupon extends Component {
                     style={customStyles}
                     contentLabel="Example Modal"
                 >
-                <div>
-                <a className="exit" sm={{ size: 1, offset: 10 }} onClick={this.closeModal}>x</a>
-                <h2>Reserve this coupon</h2>
                 <div> 
-                <Button onClick={this.closeModal}>x</Button>
+                <a className="exit" sm={{ size: 1, offset: 10 }} onClick={this.closeModal}>x</a>
                 <h2>Book this coupon!</h2>
                 <h3>{this.state.couponDetails.title}</h3>
                 <p><span className="card-price" >Price: ${this.state.couponDetails.price} </span><span className="card-discount" >Discount: ${this.state.couponDetails.discount_price}</span></p>
