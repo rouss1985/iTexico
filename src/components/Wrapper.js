@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Coupons from './Coupons'
-import Partners from './Partners'
+import Coupons from './Coupons';
+import Partners from './Partners';
+
 
 class Wrapper extends Component {
     constructor(){
@@ -8,6 +9,7 @@ class Wrapper extends Component {
         this.state = {
             coupons: [],
             partners: []
+
         }
     }
 
@@ -19,7 +21,7 @@ class Wrapper extends Component {
         .then((response) => {
             this.setState({coupons: response.coupons}, ()=>{console.log(this.state)})
         })
-    }   
+    }
 
     fetchPartners(){
         fetch('https://freetime-laboratoria.herokuapp.com/api/Accounts?access_token=YSfVKckQ68aaHfmMlfZplkNG5YbPaKTFsPFZ1kNtRkiZzfnBu8vPLFOCjRiYYTv1')
@@ -32,7 +34,7 @@ class Wrapper extends Component {
                 .sort((a, b) => a.sort - b.sort)
                 .map((a) => a.value)
             this.setState({partners: shuffled})
-    
+
         })
     }
 
@@ -41,11 +43,14 @@ class Wrapper extends Component {
         this.fetchPartners()
     }
 
+
     render() {
         return (
             <div>
+
                 <Coupons coupons={this.state.coupons}/>
                 <Partners partners={this.state.partners}/>
+
             </div>
         )
     }

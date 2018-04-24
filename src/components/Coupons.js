@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 import { Container, Row, Col,Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button } from 'reactstrap';
+import Filter from './Filter';
+
 
 
 class Coupons extends Component {
     render() {
         return (
+          <div>
             <Container>
-                <Row>
+              <Row>
+
+                <Col xs="6" sm="3">
+                <Filter />
+                </Col>
                 {this.props.coupons.map((el)=>{
                     return(
-                        <Col xs="6" sm="4">
+                        <Col xs="6" sm="3">
                             <Card>
                                 <CardImg src={el.media_urls[0]} alt={el.title} />
                                 <CardBody>
@@ -25,6 +32,8 @@ class Coupons extends Component {
                                 </CardBody>
                             </Card>
                         </Col>
+
+
                     )
                 })}
 
@@ -33,6 +42,8 @@ class Coupons extends Component {
 
 
             </Container>
+          </div>
+
         )
     }
 }
