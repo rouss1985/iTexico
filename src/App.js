@@ -5,7 +5,6 @@ import { Switch, Route } from "react-router-dom";
 import SingleCoupon from './components/SingleCoupon'
 import SinglePartner from './components/SinglePartner'
 import Wrapper from './components/Wrapper';
-import Maps from './components/Map';
 import { Container, Row, Col } from 'reactstrap';
 
 import './App.css';
@@ -18,23 +17,23 @@ class App extends Component {
         <Header />
         <Switch>
           <Route path="/" exact component={Wrapper} />
-          <Route 
+          <Route
           render={({match})=>
-            <SingleCoupon 
+            <SingleCoupon
               id={match.params.id}
               />
-            } 
+            }
             path="/cupon/:id" />
-          <Route 
+          <Route
           render={({match})=>
-            <SinglePartner 
+            <SinglePartner
               id={match.params.id}
               />
-            } 
+            }
             path="/partner/:id" />
         </Switch>
         <Footer />
-        <Maps />
+
 
       </div>
     );
