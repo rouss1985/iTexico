@@ -1,6 +1,5 @@
+
 .title2{
-  height: 44px;
-  color: #pink;
   font-family: Lato;
   font-size: 36px;
   font-weight: 900;
@@ -9,7 +8,6 @@
 }
 
 .bodyCard2{
-  	height: 242px;
     border-radius: 4px;
     background-color: #FFFFFF;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);

@@ -99,11 +99,15 @@ class Wrapper extends Component {
         return (
             <div>
                 <Hero/>
+              <Row>
+              <Col sm="3" xs="12">
                 <Filter filter={this.filter}/>
-              <Col sm={{ size: 9, offset: 3 }}>
+              </Col>
+              <Col sm="9" xs="12">
                 <Coupons sortCoupon={this.sortCoupon} coupons={this.state.coupons}/>
               </Col>
-              <Col sm={{ size: 9, offset: 3 }}>
+              </Row>
+              <Col sm={{ size: 9, offset: 3 }}xs="12">
                 <Partners partners={this.state.partners}/>
               </Col>
 
