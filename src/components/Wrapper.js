@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import Filter from './Filter'
 import Hero from './Hero'
 import { Container, Row, Col } from 'reactstrap';
+let _ = require('lodash');
 
 
 class Wrapper extends Component {
@@ -33,11 +34,16 @@ class Wrapper extends Component {
             this.setState({coupons : newCoupons})
             break;
             case 'aToZ':
-            newCoupons = this.state.coupons.sort((a, b) => a.title.localeCompare(b.title));
+            newCoupons = this.state.coupons.sort(function(obj1, obj2) {
+            return obj1.title - obj2.title;
+            });
             this.setState({coupons : newCoupons})
             break;
             case 'ZToA':
-            newCoupons = this.state.coupons.sort((a, b) => b.title.localeCompare(a.title));
+            console.log(_.sortBy(this.state.coupons, 'title'));
+            newCoupons = this.state.coupons.sort(function(obj1, obj2) {
+            return obj2.title < obj1.title;
+            });
             this.setState({coupons : newCoupons})
             break;
             }

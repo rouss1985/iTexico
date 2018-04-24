@@ -33,7 +33,7 @@ class Coupons extends Component {
                                     <CardImg src={el.media_urls} alt={el.title} className="card-image"/>
                                     <CardBody>
                                         <CardTitle className="card-title">{el.title}</CardTitle>
-                                        {/* <CardSubtitle>{el.account.name}</CardSubtitle> */}
+                                        <CardSubtitle>{el.account.name}</CardSubtitle>
                                         <CardText className="card-details">{el.details.slice(0,20)}</CardText>
                                         <CardText className="card-location">{el.location}</CardText>
                                         <Row className="card-cost">

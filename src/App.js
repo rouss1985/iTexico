@@ -33,8 +33,6 @@ class App extends Component {
             path="/partner/:id" />
         </Switch>
         <Footer />
-
-
       </div>
     );
   }
