@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import Coupons from './Coupons'
 import Partners from './Partners'
-import { BrowserRouter } from "react-router-dom";
 import Filter from './Filter'
 import Hero from './Hero'
-import { Container, Row, Col } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 
 
 class Wrapper extends Component {
@@ -33,11 +32,16 @@ class Wrapper extends Component {
             this.setState({coupons : newCoupons})
             break;
             case 'aToZ':
-            newCoupons = this.state.coupons.sort((a, b) => a.title.localeCompare(b.title));
+            newCoupons = this.state.coupons.sort(function(obj1, obj2) {
+            return obj1.title - obj2.title;
+            });
             this.setState({coupons : newCoupons})
             break;
             case 'ZToA':
-            newCoupons = this.state.coupons.sort((a, b) => b.title.localeCompare(a.title));
+            
+            newCoupons = this.state.coupons.sort(function(obj1, obj2) {
+            return obj2.title < obj1.title;
+            });
             this.setState({coupons : newCoupons})
             break;
             }
@@ -93,11 +97,15 @@ class Wrapper extends Component {
         return (
             <div>
                 <Hero/>
+              <Row>
+              <Col sm="3" xs="12">
                 <Filter filter={this.filter}/>
-              <Col sm={{ size: 9, offset: 3 }}>
+              </Col>
+              <Col sm="9" xs="12">
                 <Coupons sortCoupon={this.sortCoupon} coupons={this.state.coupons}/>
               </Col>
-              <Col sm={{ size: 9, offset: 3 }}>
+              </Row>
+              <Col sm={{ size: 9, offset: 3 }}xs="12">
                 <Partners partners={this.state.partners}/>
               </Col>
 
