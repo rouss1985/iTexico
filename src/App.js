@@ -18,24 +18,22 @@ class App extends Component {
         <Header />
         <Switch>
           <Route path="/" exact component={Wrapper} />
-          <Route 
+          <Route
           render={({match})=>
-            <SingleCoupon 
+            <SingleCoupon
               id={match.params.id}
               />
-            } 
+            }
             path="/cupon/:id" />
-          <Route 
+          <Route
           render={({match})=>
-            <SinglePartner 
+            <SinglePartner
               id={match.params.id}
               />
-            } 
+            }
             path="/partner/:id" />
         </Switch>
         <Footer />
-        <Maps />
-
       </div>
     );
   }
