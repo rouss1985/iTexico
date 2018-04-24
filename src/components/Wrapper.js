@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Coupons from './Coupons'
 import Partners from './Partners'
-import Filter from './Filter'
+
 
 class Wrapper extends Component {
     constructor(){
@@ -72,7 +72,6 @@ class Wrapper extends Component {
     render() {
         return (
             <div>
-                <Filter />
                 <Coupons sortCoupon={this.sortCoupon} coupons={this.state.coupons}/>
                 <Partners partners={this.state.partners}/>
             </div>
