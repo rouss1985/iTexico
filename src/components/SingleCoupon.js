@@ -148,11 +148,13 @@ class SingleCoupon extends Component {
                     style={customStyles}
                     contentLabel="Example Modal"
                 >
+                 <button onClick={this.closeModal}>x</button>
+                <h2>Reserve this coupon</h2>
                 <div> 
                 <Button onClick={this.closeModal}>x</Button>
-                <h2>Reservar este cupón</h2>
+                <h2>Reserve this coupon</h2>
                 <h3>{this.state.couponDetails.title}</h3>
-                <p><span>Precio: ${this.state.couponDetails.price} </span><span>Descuento: ${this.state.couponDetails.discount_price}</span></p>
+                <p><span>Price: ${this.state.couponDetails.price} </span><span>Discount: ${this.state.couponDetails.discount_price}</span></p>
                 <Form>
                     <FormGroup>
                         <Label>Nombre</Label>
@@ -166,7 +168,7 @@ class SingleCoupon extends Component {
                         <Label>Teléfono</Label>
                         <Input />
                     </FormGroup>
-                    <Button onClick={(event)=>{this.setReservation(event)}}color="primary">Reservar este cupón</Button>
+                    <Button onClick={(event)=>{this.setReservation(event)}}color="primary">Reserve this coupon</Button>
                 </Form>
 
                 </div>
