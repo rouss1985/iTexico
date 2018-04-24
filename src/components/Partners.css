@@ -1,6 +1,5 @@
 .title2{
   height: 44px;
-  width: 214px;
   color: #pink;
   font-family: Lato;
   font-size: 36px;
@@ -11,7 +10,6 @@
 
 .bodyCard2{
   	height: 242px;
-    width: 277px;
     border-radius: 4px;
     background-color: #FFFFFF;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
@@ -19,7 +17,6 @@
 
 .card2{
   height: 242px;
-  width: 277px;
   border-radius: 4px;
   background-color: #FFFFFF;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
@@ -27,7 +24,6 @@
 
 .imgCard2{
   height: 160px;
-  width: 277px;
   border-radius: 4px 4px 0 0;
 }
 
@@ -47,4 +43,8 @@
   font-size: 14px;
   line-height: 17px;
   text-align: left;
+}
+
+.contain {
+      margin-bottom: 10vh;
 }
