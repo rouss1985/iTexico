@@ -24,6 +24,7 @@ class Coupons extends Component {
                 </Row>
                 <Row>
                 {this.props.coupons.map((el, index)=>{
+                    if(el.account){
                     return(
                         <Col xs="6" sm="4" key={index}>
                             <Card>
@@ -31,7 +32,7 @@ class Coupons extends Component {
                                     <CardImg src={el.media_urls} alt={el.title} />
                                     <CardBody>
                                         <CardTitle>{el.title}</CardTitle>
-                                        {/* <CardSubtitle>{el.account.name}</CardSubtitle> */}
+                                        <CardSubtitle>{el.account.name}</CardSubtitle>
                                         <CardText>{el.details}</CardText>
                                         <CardText>{el.location}</CardText>
                                         <CardText>Precio: {el.price}</CardText>
@@ -42,8 +43,9 @@ class Coupons extends Component {
                                 </Link>
                             </Card>
                         </Col>
-                    )
+                    )}
                 })}
+
                 </Row>
 
 
