@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Coupons from './Coupons'
-import Partners from './Partners'
+import Coupons from './Coupons';
+import Partners from './Partners';
+import { Container, Row, Col } from 'reactstrap';
 
 
 class Wrapper extends Component {
@@ -37,7 +38,7 @@ class Wrapper extends Component {
             }
         }
 
-    
+
 
     fetchCoupons(){
         fetch('https://freetime-laboratoria.herokuapp.com/api/Coupons/allByCategory')
@@ -47,7 +48,7 @@ class Wrapper extends Component {
         .then((response) => {
             this.setState({coupons: response.coupons}, ()=>{console.log(this.state.coupons,'response')})
         })
-    }   
+    }
 
     fetchPartners(){
         fetch('https://freetime-laboratoria.herokuapp.com/api/Accounts?access_token=YSfVKckQ68aaHfmMlfZplkNG5YbPaKTFsPFZ1kNtRkiZzfnBu8vPLFOCjRiYYTv1')
@@ -60,7 +61,7 @@ class Wrapper extends Component {
                 .sort((a, b) => a.sort - b.sort)
                 .map((a) => a.value)
             this.setState({partners: shuffled})
-    
+
         })
     }
 
@@ -72,12 +73,17 @@ class Wrapper extends Component {
     render() {
         return (
             <div>
+              <Col sm={{ size: 9, offset: 3 }}>
                 <Coupons sortCoupon={this.sortCoupon} coupons={this.state.coupons}/>
+              </Col>
+              <Col sm={{ size: 9, offset: 3 }}>
                 <Partners partners={this.state.partners}/>
+              </Col>
+
+
             </div>
         )
     }
 }
 
 export default Wrapper;
-
