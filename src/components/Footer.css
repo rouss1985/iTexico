@@ -1,0 +1,17 @@
+.text{
+  height: 17px;
+  width: 94px;
+  color: #000000;
+  font-family: Lato;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: left;
+  padding-top: 30px;
+  margin-left: 50px;
+}
+
+.divfoo{
+  height: 80px;
+  width: cover;
+  background-color: #EEEEEE;
+}
