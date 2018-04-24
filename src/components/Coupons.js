@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { Container, Row, Col,Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button } from 'reactstrap';
+    CardTitle, CardSubtitle } from 'reactstrap';
 import { Link } from "react-router-dom";
 import './Coupons.css';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 
 class Coupons extends Component {
     render() {
-        console.log(this.props.coupons)
         return (
             <Container>
                 <Row className="Title">
