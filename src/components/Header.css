@@ -42,6 +42,10 @@
   line-height: 57px;
 }
 
-a:hover{
-  text-decoration:none;
+a {
+  color: black !important;
+}
+
+a:hover {
+  text-decoration: none !important;
 }
