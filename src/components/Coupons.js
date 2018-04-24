@@ -14,9 +14,9 @@ class Coupons extends Component {
                   <Col  sm={{ size: 2,  offset: 5 }}>
 
                   <select className= "sel" onChange={(event)=>{this.props.sortCoupon(event)}}>
-                          <option>Selecciona una opción</option>
-                          <option value="mostExpensive">Mayor precio</option>
-                          <option value="lessExpensive">Menor precio</option>
+                          <option>Select an option</option>
+                          <option value="mostExpensive">Higher price</option>
+                          <option value="lessExpensive">Lower price</option>
                           <option value="aToZ">A-Z</option>
                           <option value="ZToA">Z-A</option>
                       </select>
@@ -39,7 +39,7 @@ class Coupons extends Component {
                                         <CardText className="card-price">${el.price}</CardText>
                                         <CardText className="card-discount">$ {el.discount_price}</CardText>
                                         </Row>
-                                        <CardText>{el.available_coupons} cupones disponibles</CardText>
+                                        <CardText>{el.available_coupons} Coupons Availables</CardText>
                                     </CardBody>
                                 </Link>
                             </Card>

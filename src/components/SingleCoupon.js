@@ -122,9 +122,9 @@ class SingleCoupon extends Component {
 
                     <Col sm="4" sm={{ size: 5, offset: 2 }}>
                       <p className="titleCo">{this.state.couponDetails.title}</p>
-                      <p className="cPrice">Precio: {this.state.couponDetails.price}</p>
-                      <p className="cDesc">Descuento: {this.state.couponDetails.discount_price}</p>
-                      <p className="cDisp">Cupones disponibles: {this.state.couponDetails.available_coupons}</p>
+                      <p className="cPrice">Price: {this.state.couponDetails.price}</p>
+                      <p className="cDesc">Discount: {this.state.couponDetails.discount_price}</p>
+                      <p className="cDisp">Coupons Available: {this.state.couponDetails.available_coupons}</p>
                       <Button disable='true' onClick={this.openModal} className="btnn">Reservation</Button>
 
                       <p className="parraf">
@@ -140,7 +140,7 @@ class SingleCoupon extends Component {
                 <Row>
                   <h4 className="loc">Location</h4>
                   <div>
-                    <Mapa />
+                    <Mapa coordinates={this.state.couponDetails.coordinates}/>
                   </div>
                 </Row>
                 <Modal
@@ -151,9 +151,13 @@ class SingleCoupon extends Component {
                 >
                 <div>
                 <a className="exit" sm={{ size: 1, offset: 10 }} onClick={this.closeModal}>x</a>
+                <h2>Reserve this coupon</h2>
+                <div> 
+                <Button onClick={this.closeModal}>x</Button>
                 <h2>Book this coupon!</h2>
                 <h3>{this.state.couponDetails.title}</h3>
                 <p><span className="card-price" >Price: ${this.state.couponDetails.price} </span><span className="card-discount" >Discount: ${this.state.couponDetails.discount_price}</span></p>
+
                 <Form>
                     <FormGroup>
                         <Label>Name</Label>
@@ -167,7 +171,7 @@ class SingleCoupon extends Component {
                         <Label>Telephone</Label>
                         <Input />
                     </FormGroup>
-                    <Button className="btn" onClick={(event)=>{this.setReservation(event)}}color="primary" disabled={this.state.disabled}>Book this coupon</Button>
+                    <Button className="btn" onClick={(event)=>{this.setReservation(event)}} color="primary" disabled={this.state.disability}>Reserve this coupon</Button>
                 </Form>
 
                 </div>

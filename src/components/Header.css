@@ -41,3 +41,11 @@
   font-weight: 900;
   line-height: 57px;
 }
+
+a {
+  color: black !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
