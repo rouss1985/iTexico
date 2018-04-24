@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col,Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button } from 'reactstrap';
 import { Link } from "react-router-dom";
-
-
+import './Coupons.css';
 
 class Coupons extends Component {
     render() {
@@ -11,13 +10,17 @@ class Coupons extends Component {
         return (
             <Container>
                 <Row>
-                <select onChange={(event)=>{this.props.sortCoupon(event)}}>
-                        <option>Selecciona una opción</option>
-                        <option value="mostExpensive">Mayor precio</option>
-                        <option value="lessExpensive">Menor precio</option>
-                        <option value="aToZ">A-Z</option>
-                        <option value="ZToA">Z-A</option>
-                    </select>
+                  // <Col sm="3" className="most-recent"><span>Offers of the week</span></Col>
+                  // <Col  sm={{ size: 2,  offset: 8 }}>
+
+                  <select className= "sel" onChange={(event)=>{this.props.sortCoupon(event)}}>
+                          <option>Selecciona una opción</option>
+                          <option value="mostExpensive">Mayor precio</option>
+                          <option value="lessExpensive">Menor precio</option>
+                          <option value="aToZ">A-Z</option>
+                          <option value="ZToA">Z-A</option>
+                      </select>
+                  // </Col>
                 </Row>
                 <Row>
                 {this.props.coupons.map((el, index)=>{
@@ -41,7 +44,6 @@ class Coupons extends Component {
                         </Col>
                     )
                 })}
-
                 </Row>
 
 

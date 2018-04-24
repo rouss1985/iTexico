@@ -7,11 +7,11 @@ class Footer extends React.Component {
   render () {
     return (
       <div>
-        <Container>
           <Row className="divfoo">
+            <Container>
               <Col sm="12" className="text">FreeTime 2018</Col>
+            </Container>
           </Row>
-        </Container>
       </div>
     )
   }

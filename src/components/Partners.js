@@ -15,9 +15,8 @@ class Partners extends Component {
                 <Row>
                 {this.props.partners.map((el, index)=>{
                 if(index < 3){
-                    
                     return(
-                        <Col xs="12" sm="3" key={index}>
+                        <Col xs="12" sm="4">
                             <Card className="card2">
                                 <Link to={"/partner/" + el.id} >
                                     <CardImg className="imgCard2" src={el.media_urls[0]} alt={el.name} />

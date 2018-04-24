@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Wrapper from './components/Wrapper'
 import { Switch, Route } from "react-router-dom";
 import SingleCoupon from './components/SingleCoupon'
 import SinglePartner from './components/SinglePartner'
+import Wrapper from './components/Wrapper';
+import Maps from './components/Map';
+import { Container, Row, Col } from 'reactstrap';
 
 import './App.css';
 
@@ -32,6 +34,8 @@ class App extends Component {
             path="/partner/:id" />
         </Switch>
         <Footer />
+        <Maps />
+
       </div>
     );
   }
