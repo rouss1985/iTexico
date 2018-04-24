@@ -88,6 +88,7 @@ class SingleCoupon extends Component {
 
     componentDidMount(){
         this.fetchCoupon()
+
     }
 
     fetchCoupon(){
@@ -123,7 +124,7 @@ class SingleCoupon extends Component {
                       <p className="cPrice">Precio: {this.state.couponDetails.price}</p>
                       <p className="cDesc">Descuento: {this.state.couponDetails.discount_price}</p>
                       <p className="cDisp">Cupones disponibles: {this.state.couponDetails.available_coupons}</p>
-                      <Button disable='true' onClick={this.openModal} className="btnn">Reservation</Button>
+                      <Button disabled={this.state.couponDetails.available_coupons === 0 ? true : false } onClick={this.openModal} className="btnn">Reservation</Button>
                       
                       <p className="parraf">
                         *We will send you Code you reserve your coupon.You
@@ -165,7 +166,7 @@ class SingleCoupon extends Component {
                         <Label>Teléfono</Label>
                         <Input />
                     </FormGroup>
-                    <Button onClick={(event)=>{this.setReservation(event)}}color="primary" disabled={this.state.disabled}>Reservar este cupón</Button>
+                    <Button onClick={(event)=>{this.setReservation(event)}}color="primary">Reservar este cupón</Button>
                 </Form>
 
                 </div>
