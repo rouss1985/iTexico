@@ -1,0 +1,43 @@
+.free-time {
+
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.submit-a-coupon {
+  font-family: Lato;
+  font-size: 14px;
+}
+
+.icon {
+  height: 20px;
+  width: 20px;
+  color: #2BD6BA;
+  margin-right: 18px;
+}
+.header {
+  margin-bottom: 32px;
+  margin-top:  32px;
+}
+
+.image {
+  width: 100%;
+  background: red;
+}
+.image-hero {
+  height: 520px;
+  background-image: url('https://preview.ibb.co/nzwHbx/hero.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title {
+  padding-top: 243px;
+  text-align: center;
+  color: #FFFFFF;
+  font-family: Lato;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 57px;
+}

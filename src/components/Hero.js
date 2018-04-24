@@ -4,11 +4,9 @@ import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button } from 'reactstrap';
   const Hero = () => (
     <div>
-      <Container>
         <Row>
-          <Col sm="12"><CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" /></Col>
+          <Col sm="12"><div className="image-hero"><h1 className="title">Grat Deals for Great experiences</h1></div></Col>
         </Row>
-      </Container>
       </div>
 );
 
