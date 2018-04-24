@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
-import { Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
+// import { Card, CardImg, CardText, CardBody,
+//   CardTitle, CardSubtitle, Button } from 'reactstrap';
   const Hero = () => (
     <div>
         <Row>

@@ -17,13 +17,17 @@ const customStyles = {
     }
 };
 
+const display = {
+    display: 'none'
+}
+
 class SingleCoupon extends Component {
     constructor(){
         super();
         this.state = {
             couponDetails: {},
             modalIsOpen: false,
-            disability: false
+            disabled: false
         }
 
     this.openModal = this.openModal.bind(this);
@@ -36,10 +40,10 @@ class SingleCoupon extends Component {
 
     ableButton(){
         if(this.state.couponDetails.available_coupons === 0){
-            this.setState({disability: true})
+            this.setState({disabled: true})
 
             } else {
-                this.setState({disability: false})
+                this.setState({disabled: false})
             }
         }
 
@@ -55,7 +59,6 @@ class SingleCoupon extends Component {
             "number": phone,
             "couponId": this.state.couponDetails.id
         }
-        console.log(body)
         let url = 'https://freetime-laboratoria.herokuapp.com/api/Reservations?access_token=YSfVKckQ68aaHfmMlfZplkNG5YbPaKTFsPFZ1kNtRkiZzfnBu8vPLFOCjRiYYTv1'
         fetch(url,
         {
@@ -75,6 +78,8 @@ class SingleCoupon extends Component {
         let email = event.target.previousSibling.previousSibling.children[1].value;
         let phone = event.target.previousSibling.children[1].value
         this.sendReservation(name, email, phone)
+        event.target.parentElement.parentElement.style.display = 'none'
+        event.target.parentElement.parentElement.nextSibling.style.display = 'block'
     }
 
     closeModal() {
@@ -97,7 +102,7 @@ class SingleCoupon extends Component {
                 return response.json()
                 })
             .then((response) => {
-                this.setState({account: response}, ()=>{console.log(response.name, 'response')})
+                this.setState({account: response})
             }
         )})
     }
@@ -118,8 +123,7 @@ class SingleCoupon extends Component {
                       <p className="cPrice">Price: {this.state.couponDetails.price}</p>
                       <p className="cDesc">Discount: {this.state.couponDetails.discount_price}</p>
                       <p className="cDisp">Coupons Available: {this.state.couponDetails.available_coupons}</p>
-                      <Button onClick={this.openModal} className="btnn">Reservation</Button>
-
+                      <Button disable='true' onClick={this.openModal} className="btnn">Reservation</Button>
                       <p className="parraf">
                         *We will send you Code you reserve your coupon.You
                         have 48 Hours to present your coupon in the location listed.
@@ -144,6 +148,9 @@ class SingleCoupon extends Component {
                 >
                  <button onClick={this.closeModal}>x</button>
                 <h2>Reserve this coupon</h2>
+                <div> 
+                <Button onClick={this.closeModal}>x</Button>
+                <h2>Reserve this coupon</h2>
                 <h3>{this.state.couponDetails.title}</h3>
                 <p><span>Price: ${this.state.couponDetails.price} </span><span>Discount: ${this.state.couponDetails.discount_price}</span></p>
                 <Form>
@@ -161,6 +168,14 @@ class SingleCoupon extends Component {
                     </FormGroup>
                     <Button onClick={(event)=>{this.setReservation(event)}}color="primary" disabled={this.state.disability}>Reserve this coupon</Button>
                 </Form>
+
+                </div>
+                <div style={display}>
+                    <h2>You have reserved this coupon!</h2>
+                    <h3>{this.state.couponDetails.title}</h3>
+                    <img src="https://lh3.ggpht.com/ufwUy4SGVTqCs8fcp6Ajxfpae0bNImN1Rq2cXUjWI7jlmNMCsXgQE5C3yUEzBu5Gadkz=s180"></img>
+                    <p>We well send you this QR code to the email account you submitted</p>
+                </div> 
 
 
                 </Modal>
