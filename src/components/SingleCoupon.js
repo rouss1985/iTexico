@@ -90,6 +90,7 @@ class SingleCoupon extends Component {
 
     componentDidMount(){
         this.fetchCoupon()
+
     }
 
     fetchCoupon(){
@@ -122,11 +123,10 @@ class SingleCoupon extends Component {
 
                     <Col sm="4" sm={{ size: 5, offset: 2 }}>
                       <p className="titleCo">{this.state.couponDetails.title}</p>
-                      <p className="cPrice">Price: {this.state.couponDetails.price}</p>
-                      <p className="cDesc">Discount: {this.state.couponDetails.discount_price}</p>
-                      <p className="cDisp">Coupons Available: {this.state.couponDetails.available_coupons}</p>
-                      <Button disable='true' onClick={this.openModal} className="btnn">Reservation</Button>
-
+                      <p className="cPrice">Precio: {this.state.couponDetails.price}</p>
+                      <p className="cDesc">Descuento: {this.state.couponDetails.discount_price}</p>
+                      <p className="cDisp">Cupones disponibles: {this.state.couponDetails.available_coupons}</p>
+                      <Button disabled={this.state.couponDetails.available_coupons === 0 ? true : false } onClick={this.openModal} className="btnn">Reservation</Button>
                       <p className="parraf">
                         *We will send you Code you reserve your coupon.You
                         have 48 Hours to present your coupon in the location listed.
