@@ -137,7 +137,7 @@ class SingleCoupon extends Component {
                 <Row>
                   <h4 className="loc">Location</h4>
                   <div>
-                    <Mapa />
+                    <Mapa coordinates={this.state.couponDetails.coordinates}/>
                   </div>
                 </Row>
                 <Modal
