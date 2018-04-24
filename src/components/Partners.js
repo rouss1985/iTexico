@@ -8,7 +8,7 @@ import './Partners.css'
 
 class Partners extends Component {
     render() {
-        
+
         return (
             <Container className="contain">
                 <h1 className="title2">Our partners</h1>
@@ -16,8 +16,8 @@ class Partners extends Component {
                 {this.props.partners.map((el, index)=>{
                 if(index < 3){
                     return(
-                        <Col xs="12" sm="4">
-                            <Card className="card2">
+                        <Col xs="12" sm="4" >
+                            <Card className="card">
                                 <Link to={"/partner/" + el.id} >
                                     <CardImg className="imgCard2" src={el.media_urls[0]} alt={el.name} />
                                         <CardBody className="bodyCard2">
