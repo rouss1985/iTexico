@@ -1,0 +1,107 @@
+.imgPartner {
+  	height: 279px;
+    border-radius: 4px;	box-shadow: 0 2px 16px 0 rgba(0,0,0,0.25);
+}
+
+.namePart {	height: 44px;	color: #000000;	font-family: Lato;	font-size: 36px;	font-weight: 900;	line-height: 44px;	text-align: center;margin-bottom: 0;}
+
+.category {	color: #2BD6BA;	font-family: Lato;	font-size: 16px;	line-height: 19px;}
+
+.sumaryPart {	height: 100%;	color: #7F7F7F;	font-family: Lato;	font-size: 16px; text-align: left;}
+
+.rectanglePart {	height: 395px;	background-color: #EEF1F4;	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.25);}
+
+.namePart, .category {
+  text-align: left;
+}
+
+.cardDeals {
+  margin-top: 2em;
+}
+
+.description {
+  margin-top: 4%;
+}
+
+.our-deals {
+	height: 39px;
+
+	color: #000000;
+	font-family: Lato;
+	font-size: 32px;
+	font-weight: 900;
+	line-height: 39px;
+}
+
+#drop {margin-top: 4%;	border-radius: 4px; margin-left: 0}
+
+.our-deals {
+  width: 146px;	color: #000000;	font-family: Lato;	font-size: 32px;	font-weight: 900;	line-height: 39px;
+}
+
+
+.dropdown-toggle {
+ font-family: Lato;
+ font-size: 32px;
+ font-weight: 900;
+ line-height: 39px;
+ text-align: left;
+}
+
+.Title {
+ padding-bottom:  30px;
+}
+
+.card-image {
+ height: 160px;
+}
+
+.card-title {
+ font-family: Lato;
+ font-size: 16px;
+ line-height: 19px;
+ color: black;
+}
+
+.card-details {
+ color: #7F7F7F;
+ font-family: Lato;
+ font-size: 14px;
+ line-height: 17px;
+ text-transform: uppercase;
+ text-align: left;
+}
+
+.card-location {
+ color: #7F7F7F;
+ font-family: Lato;
+ font-size: 14px;
+ line-height: 17px;
+ border-bottom-style: dotted;
+ border-bottom-width: 1px;
+}
+
+.card-price {
+ text-decoration:line-through;
+ color: #CACACA;
+ font-family: Lato;
+ font-size: 18px;
+ line-height: 22px;
+ text-align: right;
+}
+
+.card-discount{
+    color: #2BD6BA;
+   font-family: Lato;
+   font-size: 24px;
+   line-height: 29px;
+   padding-left: 5px;
+}
+
+.card-cost{
+ padding-left: 50%;
+}
+
+.card {
+ margin-bottom: 20px;
+}

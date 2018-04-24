@@ -118,7 +118,6 @@ class SingleCoupon extends Component {
                       <p className="cPrice">Precio: {this.state.couponDetails.price}</p>
                       <p className="cDesc">Descuento: {this.state.couponDetails.discount_price}</p>
                       <p className="cDisp">Cupones disponibles: {this.state.couponDetails.available_coupons}</p>
-
                       <Button onClick={this.openModal} className="btnn">Reservation</Button>
                       
                       <p className="parraf">
