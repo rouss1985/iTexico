@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
+import { Row, Col,Card, CardImg, CardText, CardBody,CardTitle } from 'reactstrap';
 import { Form, FormGroup, Label, Input, FormFeedback, FormText } from 'reactstrap';
 import { Button } from 'reactstrap';
-import { Container, Row, Col } from 'reactstrap';
+import { Container } from 'reactstrap';
 import './SingleCoupon.css'
 import Mapa from './Map'
 
@@ -13,7 +14,8 @@ const customStyles = {
         right                 : 'auto',
         bottom                : 'auto',
         marginRight           : '-50%',
-        transform             : 'translate(-50%, -50%)'
+        transform             : 'translate(-50%, -50%)',
+        width : '40%',
     }
 };
 
@@ -124,7 +126,7 @@ class SingleCoupon extends Component {
                       <p className="cDesc">Descuento: {this.state.couponDetails.discount_price}</p>
                       <p className="cDisp">Cupones disponibles: {this.state.couponDetails.available_coupons}</p>
                       <Button disable='true' onClick={this.openModal} className="btnn">Reservation</Button>
-                      
+
                       <p className="parraf">
                         *We will send you Code you reserve your coupon.You
                         have 48 Hours to present your coupon in the location listed.
@@ -147,14 +149,14 @@ class SingleCoupon extends Component {
                     style={customStyles}
                     contentLabel="Example Modal"
                 >
-                <div> 
-                <Button onClick={this.closeModal}>x</Button>
-                <h2>Reservar este cupón</h2>
+                <div>
+                <a className="exit" sm={{ size: 1, offset: 10 }} onClick={this.closeModal}>x</a>
+                <h2>Book this coupon!</h2>
                 <h3>{this.state.couponDetails.title}</h3>
-                <p><span>Precio: ${this.state.couponDetails.price} </span><span>Descuento: ${this.state.couponDetails.discount_price}</span></p>
+                <p><span className="card-price" >Price: ${this.state.couponDetails.price} </span><span className="card-discount" >Discount: ${this.state.couponDetails.discount_price}</span></p>
                 <Form>
                     <FormGroup>
-                        <Label>Nombre</Label>
+                        <Label>Name</Label>
                         <Input />
                     </FormGroup>
                     <FormGroup>
@@ -162,19 +164,19 @@ class SingleCoupon extends Component {
                         <Input />
                     </FormGroup>
                     <FormGroup>
-                        <Label>Teléfono</Label>
+                        <Label>Telephone</Label>
                         <Input />
                     </FormGroup>
-                    <Button onClick={(event)=>{this.setReservation(event)}}color="primary" disabled={this.state.disabled}>Reservar este cupón</Button>
+                    <Button className="btn" onClick={(event)=>{this.setReservation(event)}}color="primary" disabled={this.state.disabled}>Book this coupon</Button>
                 </Form>
 
                 </div>
                 <div style={display}>
                     <h2>You have reserved this coupon!</h2>
                     <h3>{this.state.couponDetails.title}</h3>
-                    <img src="https://lh3.ggpht.com/ufwUy4SGVTqCs8fcp6Ajxfpae0bNImN1Rq2cXUjWI7jlmNMCsXgQE5C3yUEzBu5Gadkz=s180"></img>
+                    <img src="https://image.ibb.co/mCK6Mx/QR.png"></img>
                     <p>We well send you this QR code to the email account you submitted</p>
-                </div> 
+                </div>
 
 
                 </Modal>
